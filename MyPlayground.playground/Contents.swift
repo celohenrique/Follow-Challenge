@@ -7,9 +7,6 @@ func compactarNumero(valor: Int) -> String {
     
     switch valor {
         
-    case 0...999:
-        return "\(valor)"
-        
     case 1000...999999:
         if mils > 1.0 {
         let format = String(format: "%.1f", mils)
@@ -28,13 +25,9 @@ func compactarNumero(valor: Int) -> String {
             return "\(Int(millions))M"
         }
     default:
-        break
+        return "\(valor)"
     }
-    
-    return "\(valor)"
 }
-
-
 
 print(compactarNumero(valor: 50)) // 50
 print(compactarNumero(valor: 876)) // 876
